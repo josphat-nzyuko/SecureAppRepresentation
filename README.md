@@ -2,15 +2,50 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# 🔐 SecureApp
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A full-stack secure web application prototype built with 
+**React** (frontend) and **Python FastAPI** (backend).
 
-## React Compiler
+## Security Features
+- JWT Authentication
+- bcrypt Password Hashing
+- XSS Protection with DOMPurify
+- Input Validation with Pydantic
+- Security Headers (CSP, HSTS, X-Frame-Options)
+- CORS Protection
+- SQL Injection Prevention with SQLAlchemy ORM
+- Audit Logging on every request
+- Protected Routes on frontend
+- Rate Limiting ready
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
+| Layer | Technology |
+|---|---|
+| Frontend | React, Vite, Axios, DOMPurify |
+| Backend | Python, FastAPI, SQLAlchemy |
+| Database | SQLite |
+| Auth | JWT Tokens, bcrypt |
 
-## Expanding the ESLint configuration
+## How to Run
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend
+```bash
+cd backend
+source venv/bin/activate
+pip install -r requirements.txt
+python run.py
+```
+
+### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## API Documentation
+Once the backend is running visit:
+```
+http://localhost:8000/docs
+```
