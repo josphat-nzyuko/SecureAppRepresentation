@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     DATABASE_URL: str
     ALLOWED_ORIGINS: list[str] = ["https://localhost:5173"]
+    DEBUG: bool = False
 
     model_config = SettingsConfigDict(env_file=".env", enable_decoding=False)
 
